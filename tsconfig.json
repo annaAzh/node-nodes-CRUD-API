@@ -10,8 +10,6 @@
     },
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
     "strict": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
@@ -19,6 +17,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*.ts"],
   "exclude": ["node_modules"]
 }
