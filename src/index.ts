@@ -2,6 +2,7 @@ import { createServer } from 'http';
 import { config } from 'dotenv';
 import { Paths } from './shared/types';
 import { addUser, deleteUser, getAllUsers, getUser, updateUser } from './controllers/index';
+import { notFound } from './shared/helpers';
 config();
 
 const PORT = process.env.PORT || 3000;
@@ -18,8 +19,7 @@ const server = createServer((req, res) => {
   } else if (req.method === 'DELETE' && req.url?.startsWith(Paths.USERS)) {
     deleteUser(req, res);
   } else {
-    res.statusCode = 404;
-    res.end('Not Found');
+    notFound(res, 'Required path not found');
   }
 });
 
